@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kruskal's Algorithm Visualization</title>
+    <link rel="stylesheet" href="simulation-styles.css">
+</head>
+<body>
+    <h1>Kruskal's Algorithm Visualization</h1>
+    
+    <div class="container">
+        <div class="instructions">
+            <h3>How to use:</h3>
+            <ol>
+                <li>Enter the number of nodes in your graph</li>
+                <li>Add edges by specifying source node, destination node, and weight</li>
+                <li>Click "Visualize" to see Kruskal's algorithm in action</li>
+                <li>Use Step-by-Step mode to see each decision the algorithm makes</li>
+            </ol>
+        </div>
+        
+        <div class="input-section">
+            <div class="input-row">
+                <label for="numNodes">Number of Nodes:</label>
+                <input type="number" id="numNodes" min="2" value="5" max="15">
+                <button id="setNodes">Set</button>
+            </div>
+            
+            <div id="edgeInputs">
+                <div class="input-row">
+                    <label for="source">Source:</label>
+                    <input type="number" id="source" min="0" max="4" placeholder="Source node">
+                    <label for="destination">Destination:</label>
+                    <input type="number" id="destination" min="0" max="4" placeholder="Destination node">
+                    <label for="weight">Weight:</label>
+                    <input type="number" id="weight" min="1" placeholder="Edge weight">
+                    <button id="addEdge">Add Edge</button>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="clearEdges">Clear Edges</button>
+                <button id="loadExample">Load Example</button>
+                <button id="runAlgorithm">Visualize</button>
+                <button id="nextStep" disabled>Next Step</button>
+                <button id="resetVisualization" disabled>Reset</button>
+            </div>
+            
+            <div class="example-input">
+                <p><strong>Example:</strong> A graph with 5 nodes (0-4) might have edges like: (0,1,2), (0,3,6), (1,2,3), (1,3,8), (1,4,5), (2,4,7), (3,4,9)</p>
+            </div>
+        </div>
+        
+        <div class="visualization">
+            <canvas id="graphCanvas" width="800" height="400"></canvas>
+            
+            <div class="steps-container" id="steps">
+                <p>Steps will appear here after running the algorithm.</p>
+            </div>
+            
+            <div class="result" id="result" style="display: none;">
+                <h3>Final Minimum Spanning Tree:</h3>
+                <div id="resultDetails"></div>
+                <p id="totalWeight"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="simulation-scripts.js"></script>
+</body>
+</html>
